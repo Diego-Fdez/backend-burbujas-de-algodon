@@ -2,22 +2,14 @@ import express from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { dbConnection } from './db/database.js';
 
-//importando database conecction
-import { sequelize } from './db/database.js';
-import './models/form.models.js'
-
-//Iniciando conecction 
-try {
-  await sequelize.sync({force: true});
-  console.log('Connection has been established successfully.');
-} catch (error) {
-  console.error('Unable to connect to the database:', error);
-}
 /* Creating an instance of the express application. */
 const app = express();
 app.use(express.json());
 
+/* Connecting to the database. */
+dbConnection();
 
 dotenv.config();
 
@@ -43,7 +35,7 @@ const corsOptions = {
 /* A middleware that enables cors. */
 //app.use(cors(corsOptions));
 
-//app.use('/api/v1');
+//app.use('/api/v1', );
 
 /* Telling the server to listen on port ?. */
 app.listen(PORT, () => {
