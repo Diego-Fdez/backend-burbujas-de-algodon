@@ -1,12 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@emailjs/nodejs': ^2.1.1
   '@mailchimp/mailchimp_marketing': ^3.0.80
   cors: 2.8.5
   dotenv: 16.0.3
-  exppress: 0.0.1-security
   express: ^4.18.2
   express-validator: 6.14.3
+  formidable: 2.1.1
   morgan: 1.10.0
   mysql2: ^3.1.0
   nodemon: 2.0.20
@@ -16,12 +17,13 @@ specifiers:
   swagger-ui-express: 4.6.0
 
 dependencies:
+  '@emailjs/nodejs': 2.1.1
   '@mailchimp/mailchimp_marketing': 3.0.80
   cors: 2.8.5
   dotenv: 16.0.3
-  exppress: 0.0.1-security
   express: 4.18.2
   express-validator: 6.14.3
+  formidable: 2.1.1
   mysql2: 3.1.0
   openapi-types: 12.1.0
   sequelize: 6.28.0_mysql2@3.1.0
@@ -64,6 +66,11 @@ packages:
       call-me-maybe: 1.0.2
       openapi-types: 12.1.0
       z-schema: 5.0.5
+    dev: false
+
+  /@emailjs/nodejs/2.1.1:
+    resolution: {integrity: sha512-K0V/XVoH3WC0wRYNZNt6+XJMyp1LE2ai8ITq5Ow/W8+TfZNXTCHTl1XiM8N0yNyA+K3/a2EMQK1fXOVCVvzwFA==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /@jsdevtools/ono/7.1.3:
@@ -128,6 +135,10 @@ packages:
 
   /array-flatten/1.1.1:
     resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
+    dev: false
+
+  /asap/2.0.6:
+    resolution: {integrity: sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==}
     dev: false
 
   /asynckit/0.4.0:
@@ -340,6 +351,13 @@ packages:
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
     dev: false
 
+  /dezalgo/1.0.4:
+    resolution: {integrity: sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==}
+    dependencies:
+      asap: 2.0.6
+      wrappy: 1.0.2
+    dev: false
+
   /doctrine/3.0.0:
     resolution: {integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==}
     engines: {node: '>=6.0.0'}
@@ -381,10 +399,6 @@ packages:
   /etag/1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
-    dev: false
-
-  /exppress/0.0.1-security:
-    resolution: {integrity: sha512-nGsHQhiMOHvLLvss/qkVurvig4QtbmQW6TOhqkl2YOY2jqpm23QEeawcdCdt+gcBQT1Big8nvfUqANpK7sSXhQ==}
     dev: false
 
   /express-validator/6.14.3:
@@ -474,6 +488,15 @@ packages:
     deprecated: 'Please upgrade to latest, formidable@v2 or formidable@v3! Check these notes: https://bit.ly/2ZEqIau'
     dev: false
 
+  /formidable/2.1.1:
+    resolution: {integrity: sha512-0EcS9wCFEzLvfiks7omJ+SiYJAiD+TzK4Pcw1UlUoGnhUxDcMKjt0P7x8wEb0u6OHu8Nb98WG3nxtlF5C7bvUQ==}
+    dependencies:
+      dezalgo: 1.0.4
+      hexoid: 1.0.0
+      once: 1.4.0
+      qs: 6.11.0
+    dev: false
+
   /forwarded/0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
@@ -547,6 +570,11 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+    dev: false
+
+  /hexoid/1.0.0:
+    resolution: {integrity: sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==}
+    engines: {node: '>=8'}
     dev: false
 
   /http-errors/2.0.0:
