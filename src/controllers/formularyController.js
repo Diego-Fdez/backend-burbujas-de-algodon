@@ -2,6 +2,7 @@ import { Op } from 'sequelize';
 import { Formularies } from '../models/formModels.js';
 import { badWords } from '../db/badWordsDictionary.js';
 import { validateFields } from '../helpers/validateFields.js';
+import { sendEmail } from '../helpers/sendEmail.js';
 
 /** It creates a regular expression that matches any of the words in the array badWords, and then tests
  * the word passed to the function against that regular expression */
@@ -29,6 +30,8 @@ export async function createFormulary(req, res) {
   }
 
   try {
+    await sendEmail(req, res);
+
     /* Creating a new formulary. */
     await Formularies.create({
       fullName: fullName,
@@ -40,12 +43,12 @@ export async function createFormulary(req, res) {
 
     res.send({
       status: 'OK',
-      data: 'Formulary created successfully',
+      data: 'Email sent',
     });
   } catch (error) {
     res.status(error?.status || 500).send({
       status: 'FAILED',
-      data: { error: error?.errors[0]?.message || error?.message || error },
+      data: { error: error },
     });
   }
 }
