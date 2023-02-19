@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import client from '@mailchimp/mailchimp_marketing';
+import { validateFields } from '../helpers/validateFields.js';
 
 dotenv.config();
 
@@ -12,6 +13,9 @@ client.setConfig({
 //It takes an email address from the request body, and adds it to the Mailchimp list
 export async function subscribe(req, res) {
   const { email } = req.body;
+
+  /* Validate the fields */
+  validateFields(req, res);
 
   try {
     await client.lists.addListMember(process.env.MAILCHIMP_LIST_ID, {
